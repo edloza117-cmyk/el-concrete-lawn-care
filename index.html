@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EL Concrete Construction and Lawn Care</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>EL Concrete Construction and Lawn Care</h1>
+        <p>Lawn Care • Yard Cleanup • Junk Removal • Concrete • Flower Bedding</p>
+      </div>
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#quote-form" class="btn btn-primary">Get Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge">Fast estimates. Reliable service. Local crew.</span>
+        <h2>Professional outdoor services for homes and properties across the DMV.</h2>
+        <p class="lead">
+          EL Concrete Construction and Lawn Care provides dependable lawn mowing, yard cleanup, junk removal, flower bedding, and concrete services. Select the service you need and send us a quote request quickly and easily online.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" id="heroQuoteButton">Request a Free Quote</button>
+          <a class="btn btn-secondary" href="#services">View Services</a>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <strong>5</strong>
+            <p>Core services available for residential and small commercial properties</p>
+          </div>
+          <div class="stat-card">
+            <strong>24h</strong>
+            <p>Fast response time for most quote requests</p>
+          </div>
+          <div class="stat-card">
+            <strong>DMV</strong>
+            <p>Proudly serving customers across Maryland, DC, and Northern Virginia</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-picker">
+        <p class="section-label">Quick Service Picker</p>
+        <h3>What service do you need?</h3>
+        <div class="picker-grid" id="servicePicker"></div>
+        <div class="selected-service">
+          <p class="section-label selected-label">Selected Service</p>
+          <h4 id="selectedServiceTitle">Lawn Mowing</h4>
+          <p id="selectedServiceDetails">Professional mowing, edging, trimming, and blow-off service for residential and small commercial properties.</p>
+          <span class="price" id="selectedServicePrice">Starting at $45+</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-label">Our Services</p>
+        <h3>Reliable outdoor and property improvement services</h3>
+        <p>
+          We help homeowners and businesses keep their properties clean, safe, and looking their best with dependable service and straightforward quote requests.
+        </p>
+      </div>
+      <div class="cards-grid" id="serviceCards"></div>
+    </div>
+  </section>
+
+  <section id="about" class="section highlight-section">
+    <div class="container two-col">
+      <div>
+        <p class="section-label">Why Choose Us</p>
+        <h3 class="about-title">Quality work, honest service, and dependable results</h3>
+        <p>
+          At EL Concrete Construction and Lawn Care, we take pride in providing outdoor services that help improve curb appeal, maintain clean properties, and handle jobs the right way from start to finish.
+        </p>
+        <p class="about-text-spacer">
+          Whether you need routine lawn care, seasonal cleanup, flower bed installation, junk removal, or concrete replacement, we make it easy to request service and get the job moving.
+        </p>
+      </div>
+      <div class="why-grid">
+        <div class="mini-card">
+          <h4>Wide Range of Services</h4>
+          <p>From grass cutting and cleanup to flower bedding and concrete work, we handle multiple outdoor property needs in one place.</p>
+        </div>
+        <div class="mini-card">
+          <h4>Easy Quote Request</h4>
+          <p>Select the service you need and send us your project details through a quick and simple online form.</p>
+        </div>
+        <div class="mini-card">
+          <h4>Local and Reliable</h4>
+          <p>We proudly serve customers across much of the DMV with dependable communication and professional service.</p>
+        </div>
+        <div class="mini-card">
+          <h4>Built Around Your Property</h4>
+          <p>Every property is different, so we review your needs carefully and provide quotes based on the job you need done.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quote-form" class="section quote-section">
+    <div class="container quote-grid">
+      <div class="form-card">
+        <p class="section-label">Request a Quote</p>
+        <h3 class="quote-title">Tell us about your project</h3>
+        <p>
+          Need lawn care, yard cleanup, junk removal, flower bedding, or concrete work? Fill out the form below and we will review your request and get back to you as soon as possible with more information and a quote.
+        </p>
+
+        <form id="quoteRequestForm" class="form-grid" action="https://formspree.io/f/xreyqjwq" method="POST">
+          <div class="form-row">
+            <input type="text" id="fullName" name="fullName" placeholder="Full Name" required />
+            <input type="hidden" name="form_name" value="EL Concrete Construction and Lawn Care Quote Request" />
+            <input type="email" id="email" name="email" placeholder="Email Address" required />
+          </div>
+          <div class="form-row">
+            <input 
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Phone Number"
+            pattern="[0-9]{10}"
+            title="Enter a 10 digit phone number"
+            required
+          />            <input type="text" id="address" name="address" placeholder="Service Address" required />
+          </div>
+          <select id="service" name="service"></select>
+          <textarea id="message" name="message" placeholder="Describe the work you need done, property size, timeline, or any other details we should know."></textarea>
+          <button type="submit" class="btn btn-primary">Submit Quote Request</button>
+
+          <div class="success-message" id="errorMessage" style="display:none; background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.25); color: #fecaca;">
+            Something went wrong. Please try again.
+          </div>
+        </form>
+      </div>
+
+      <div class="info-card">
+        <h3 class="info-title">Service Details</h3>
+        <p class="info-intro">
+          Choose a service to view more information about the work we provide. Your selection will automatically update the quote form so you can send the right request for your property.
+        </p>
+
+        <div class="selected-service">
+          <p class="section-label selected-label">Currently Selected</p>
+          <h4 id="sidebarServiceTitle">Lawn Mowing</h4>
+          <p id="sidebarServiceDetails">Professional mowing, edging, trimming, and blow-off service for residential and small commercial properties.</p>
+          <span class="price" id="sidebarServicePrice">Starting at $45+</span>
+        </div>
+
+        <div class="info-list">
+          <div>
+            <strong>Phone</strong>
+            <p>(301) 633-6632</p>
+          </div>
+          <div>
+            <strong>Email</strong>
+            <p>edloza117@gmail.com</p>
+          </div>
+          <div>
+            <strong>Service Area</strong>
+            <p>Serving most of the DMV, including Baltimore County, Howard County, Montgomery County, Washington, DC, and Northern Virginia.</p>
+          </div>
+          <div>
+            <strong>Business Hours</strong>
+            <p>Monday - Saturday: 8:00 AM - 6:00 PM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 EL Concrete Construction and Lawn Care. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#quote-form">Get Quote</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
