@@ -115,6 +115,8 @@ p {
   font-size: 30px;
   font-weight: 800;
   letter-spacing: -0.02em;
+  line-height: 1.1;
+
 }
 
 .brand p {
@@ -484,4 +486,107 @@ textarea {
   display: flex;
   gap: 18px;
   flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .header-inner,
+  .hero-grid,
+  .two-col,
+  .quote-grid {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .header-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .stats-grid,
+  .picker-grid,
+  .why-grid,
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero h2 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: min(100%, calc(100% - 24px));
+  }
+
+  .section {
+    padding: 56px 0;
+  }
+
+  .brand h1 {
+    font-size: 22px;
+  }
+
+  .brand p {
+    font-size: 12px;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: flex-start;
+    font-size: 14px;
+  }
+
+  .hero-grid,
+  .stats-grid,
+  .picker-grid,
+  .cards-grid,
+  .two-col,
+  .why-grid,
+  .quote-grid,
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .hero p.lead {
+    font-size: 16px;
+  }
+
+  .section-head h3,
+  .about-title,
+  .quote-title,
+  .info-title {
+    font-size: 28px;
+  }
+
+  .service-picker,
+  .form-card,
+  .info-card,
+  .card,
+  .mini-card,
+  .stat-card {
+    padding: 20px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
 }
